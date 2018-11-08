@@ -1,0 +1,17 @@
+{
+  "name": "esy-neovim",
+  "version": "0.3.1000",
+  "description": "Mirror of neovim, buildable with esy",
+  "license": "MIT",
+  "esy": {
+    "build": [
+        ["bash", "-c", "#{os == 'windows' ? './esy/configure-windows.sh' : './esy/configure.sh'}"],
+        ["./esy/build.sh"],
+        ["./esy/test.sh"]
+    ],
+    "buildsInSource": "_build"
+  },
+  "devDependencies": {
+      "esy-cmake": "^0.3.1"
+  }
+}
